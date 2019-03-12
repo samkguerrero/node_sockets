@@ -1,13 +1,17 @@
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+server.listen(1337,'127.0.0.1')
 
 var express = require("express");
+// var app = express();
+// const server = app.listen(1337);
+// const io = require('socket.io')(server)
 
 var path = require("path");
-
-var app = express();
-
+// app.use(express.static(path.join(__dirname, "./static")));
 app.use(express.static(path.join(__dirname, "./static")));
-const server = app.listen(1337);
-const io = require('socket.io')(server)
+
 var players = {};
 
 io.on('connection', function (socket) { //2
