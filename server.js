@@ -1,7 +1,7 @@
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-server.listen(1337,'127.0.0.1')
+server.listen(1337)
 
 var express = require("express");
 // var app = express();
